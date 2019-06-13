@@ -22,6 +22,11 @@ namespace LINQExamples
             DateHired = dateHired;
             SupervisorId = supervisorId;
         }
+
+        public override string ToString()
+        {
+            return $"{Id}, {FirstName} {LastName}, {DateHired:d}, {SupervisorId}";
+        }
     }
 
     public class Project
@@ -41,6 +46,11 @@ namespace LINQExamples
             Id = id;
             Name = name;
         }
+
+        public override string ToString()
+        {
+            return $"{Id} {Name}";
+        }
     }
 
     public class Company
@@ -53,7 +63,7 @@ namespace LINQExamples
             var john = new Employee(1, "John", "Doe", new DateTime(2015, 1, 10));
             var jane = new Employee(2, "Jane", "Doe", new DateTime(2015, 2, 20), 1);
             var tom = new Employee(3, "Tom", "Smith", new DateTime(2016, 6, 19), 2);
-            var bob = new Employee(1, "Bob", "Lee", new DateTime(2016, 6, 20), 2);
+            var bob = new Employee(4, "Bob", "Lee", new DateTime(2016, 6, 20), 2);
 
             Employees = new List<Employee>();
             Employees.Add(john);
